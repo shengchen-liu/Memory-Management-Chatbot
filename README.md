@@ -1,4 +1,4 @@
-# CPPND: Memory Management Chatbot
+# Memory Management Chatbot
 
 This is the project for the third course in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213): Memory Management.
 
@@ -10,7 +10,28 @@ In this project you will analyze and modify the program. Although the program ca
 
 Your goal is to use the course knowledge to optimize the ChatBot program from a memory management perspective. There are a total of five specific tasks to be completed, which are detailed below.
 
+## Program Schematics
+
+Below are the program schematics from the two screencasts above. You may want to download and save these for future reference as you are working on the code.
+
+
+
+[![img](https://video.udacity-data.com/topher/2019/September/5d89637f_udacity-memory-management-final-project.pptx-1/udacity-memory-management-final-project.pptx-1.png)](https://classroom.udacity.com/nanodegrees/nd213/parts/789a1625-9b09-4615-9210-ddbc12e9247b/modules/b2145e6c-f349-4071-b1a5-682cda25eba8/lessons/3539e7bf-3b7c-4397-b77b-1b9842c897c6/concepts/7e1b9b1b-daf7-45e4-97d2-9f01ba82d363#)
+
+
+
+[![img](https://video.udacity-data.com/topher/2019/September/5d89638a_udacity-memory-management-final-project.pptx-2/udacity-memory-management-final-project.pptx-2.png)](https://classroom.udacity.com/nanodegrees/nd213/parts/789a1625-9b09-4615-9210-ddbc12e9247b/modules/b2145e6c-f349-4071-b1a5-682cda25eba8/lessons/3539e7bf-3b7c-4397-b77b-1b9842c897c6/concepts/7e1b9b1b-daf7-45e4-97d2-9f01ba82d363#)
+
+
+
+## Knowledge Base
+
+![image-20200614185557775](
+
+)
+
 ## Dependencies for Running Locally
+
 * cmake >= 3.11
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * make >= 4.1 (Linux, Mac), 3.81 (Windows)
