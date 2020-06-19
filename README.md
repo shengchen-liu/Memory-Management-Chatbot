@@ -24,12 +24,6 @@ Below are the program schematics from the two screencasts above. You may want to
 
 
 
-## Knowledge Base
-
-![image-20200614185557775](
-
-)
-
 ## Dependencies for Running Locally
 
 * cmake >= 3.11
@@ -50,9 +44,18 @@ Below are the program schematics from the two screencasts above. You may want to
 ## Basic Build Instructions
 
 1. Clone this repo.
+
 2. Make a build directory in the top level directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-4. Run it: `./membot`.
+
+3. Install wxWidgets
+
+   ```shell
+   sudo apt-get install libwxgtk3.0-dev libwxgtk3.0-0v5 
+   ```
+
+4. Compile: `cmake .. && make`
+
+5. Run it: `./membot`.
 
 ## Project Task Details
 
@@ -63,15 +66,46 @@ Aside from the bug mentioned above, there are five additional major student task
 ### Task 1 : Exclusive Ownership 1
 In file `chatgui.h` / `chatgui.cpp`, make `_chatLogic` an exclusive resource to class `ChatbotPanelDialog` using an appropriate smart pointer. Where required, make changes to the code such that data structures and function parameters reflect the new structure. 
 
+```c++
+std::unique_ptr<ChatLogic> _chatLogic;
+```
+
+
+
 ### Task 2 : The Rule Of Five
 In file `chatbot.h` / `chatbot.cpp`, make changes to the class `ChatBot` such that it complies with the Rule of Five. Make sure to properly allocate / deallocate memory resources on the heap and also copy member data where it makes sense to you.  In each of the methods (e.g. the copy constructor), print a string of the type "ChatBot Copy Constructor" to the console so that you can see which method is called in later examples. 
 
+```c++
+// copy constructor
+ChatBot(const ChatBot &source);
+
+// copy assignment constructor
+ChatBot &operator=(const ChatBot &source);
+
+// move constructor
+ChatBot(ChatBot &&source);
+
+// Move assignment constructor
+ChatBot &operator=(ChatBot &&source);
+```
+
+
+
 ### Task 3 : Exclusive Ownership 2
+
 In file `chatlogic.h` / `chatlogic.cpp`, adapt the vector `_nodes` in a way that the instances of `GraphNodes` to which the vector elements refer are exclusively owned by the class `ChatLogic`. Use an appropriate type of smart pointer to achieve this. Where required, make changes to the code such that data structures and function parameters reflect the changes. When passing the `GraphNode` instances to functions, make sure to not transfer ownership and try to contain the changes to class `ChatLogic` where possible. 
+
+```c++
+std::vector<std::unique_ptr<GraphNode>> _nodes;
+```
+
+
 
 ### Task 4 : Moving Smart Pointers
 
 In files `chatlogic.h` / `chatlogic.cpp` and `graphnodes.h` / `graphnodes.cpp` change the ownership of all instances of `GraphEdge` in a way such that each instance of `GraphNode` exclusively owns the outgoing `GraphEdges` and holds non-owning references to incoming `GraphEdges`. Use appropriate smart pointers and where required, make changes to the code such that data structures and function parameters reflect the changes. When transferring ownership from class `ChatLogic`, where all instances of `GraphEdge` are created, into instances of `GraphNode`, make sure to use move semantics. 
+
+
 
 ### Task 5 : Moving the ChatBot
 
